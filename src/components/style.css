@@ -1,6 +1,164 @@
 .HeaderContainer{
-    background-color: rgb(3, 80, 187);
+    background-color: rgb(125, 135, 146);
     height: 40px;
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btn-openAccount{
+    border-radius: 10px;
+    background-color: rgb(3, 44, 62);
+    color: white;
+    transition: all 0.5s;
+
+}
+.btn-openAccount:hover{
+    background-color: transparent;
+    color: black;
+}
+
+.btn-header{
+    margin-left: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.btn-header:hover{
+    color: black;
+    border: 1px solid black;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: black;
+    font-size: inherit;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 0.8rem;
+   
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border:1px solid black;
+    border-radius: 10px;
+    padding: 0.3rem;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    border-top:1px solid black;
+    text-decoration: none;
+    display: block;
+    margin-top:0.3rem
+  }
+  .dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: transparent;
+
+}
+ .heroContainer{
+ 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Hero{
+  height: 100vh;
+  background-image: url("https://img.freepik.com/free-vector/chart-investment-financial-data-with-glowing-planet-world-stock-market-investment-trading-graph-business-technology-concept-vector-illustration-eps-10_185386-1017.jpg?w=2000");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:cover;
+  display: flex;
+}
+
+.tickImages{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.MenuMobile{
+  display: none;
+}
+ @media (max-width: 768px){
+  .MenuMobile{
+    display: block;
+    cursor: pointer;
+  }
+  .titles-header{
+    display: none;
+  }
+   .Hero{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+
+  /* .HeaderContainer{
+ 
+    position:absolute;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    height: 100vh;
+    top: 0;
+    right:-100%;
+  }
+  .HeaderContainer.active {
+    right: 0;
+  }
+
+  .titles-header{
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: center;
+    font-size: 1.5rem;
+    top: 0;
+    right:0;
+    width:50%;
+    height: 100vh;
+    transition: 0.5s;
+    z-index: 2;
+    background-color:grey;
+  }
+  .dropdown{
+    width: 100%;
+    margin-top:1rem;
+    border: 1px solid black;
+  }
+  .btn-header{
+    margin-top:1rem
+  } */
 }
