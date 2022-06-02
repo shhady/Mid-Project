@@ -1,0 +1,94 @@
+.Featured{
+    width: 100%;
+    padding: 8rem 0;
+    background-color: white;
+    clip-path: polygon(0 0, 100%, 10%, 100% 100%, 0% 90%);
+}
+.Featured .container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem
+}
+@media (max-width: 768px) {
+    .Featured .container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+.Featured .left{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding-bottom: 2rem;
+  
+}
+.Featured .left p {
+    margin: 1.5rem 0;
+}
+.Featured .left .btn {
+    align-self: flex-start;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
+
+.btn-allCryptos{
+    background-color: rgb(3, 44, 62);
+    color: white;
+    margin: 1rem;
+    width: 40%;
+    align-self: center;
+    border-radius: 10px;
+    height: 40px;
+}
+.Featured .right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.top{
+    display: flex;
+    flex-direction: column;
+    padding: 12px 22px;
+    margin: 0.4rem;
+    width:80px;
+    height: 160px;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+    box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px;
+    text-align: center;
+}
+.Featured .right .card:hover{
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.cryptoImg{
+    width: 40px;
+    margin: auto;
+    padding: 0.2rem 0;
+}
+
+.blockchain{
+    background-image: url("https://toppickinvestment.com/wp-content/uploads/2021/04/blockchain-network-cryptography-3774715.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    height: 60vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
