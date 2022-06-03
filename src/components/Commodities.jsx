@@ -2,8 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const Commodities = () => {
   return (
-    <div className="Bitcoin">
-      <h2>Commodities</h2>
+    <div className="MainContainer">
+      <h1>Commodities</h1>
       <p>
         The commodities traded are usually classified into four main categories:
         minerals, energy, livestock and meat, and agriculture. For investors,

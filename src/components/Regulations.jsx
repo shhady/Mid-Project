@@ -4,7 +4,7 @@ const Regulations = () => {
   return (
     <div>
       <div style={{ marginLeft: "1rem" }}>
-        <h2>Trusted Regulators</h2>
+        <h1>Trusted Regulators</h1>
         <p>
           <b>United States</b>: National Futures Association (NFA) and Commodity
           Futures Trading Commission (CFTC)

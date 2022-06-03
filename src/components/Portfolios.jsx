@@ -2,7 +2,7 @@ import React from "react";
 import "./styleCryptoData.css";
 const Portfolios = () => {
   return (
-    <div className="Bitcoin">
+    <div className="MainContainer">
       <h1>Investment Portfolios</h1>
       <h2>What are investment portfolios or investment funds?</h2>
       <p>

@@ -2,8 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const ChooseBrokerFullData = () => {
   return (
-    <div className="Bitcoin">
-      <h2>choose a broker</h2>
+    <div className="MainContainer">
+      <h1>choose a broker</h1>
       <p>
         The financial markets are so competitive that the mere thought of having
         to scrutinize all the brokers available can get you in big trouble.

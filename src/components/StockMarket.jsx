@@ -2,7 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const StockMarket = () => {
   return (
-    <div className="Bitcoin">
+    <div className="MainContainer">
+      <h1>Stocks</h1>
       <h2>What is the stock market?</h2>
       <p>
         Stock market refers to the set of markets and exchanges where the normal

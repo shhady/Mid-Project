@@ -2,8 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const IndicesFullData = () => {
   return (
-    <div className="Bitcoin">
-      <h2>indices</h2>
+    <div className="MainContainer">
+      <h1>indices</h1>
       <p>
         Stock market indices around the world are powerful indicators of global
         economies and country-specific. In the US, the S&P 500, Dow Jones

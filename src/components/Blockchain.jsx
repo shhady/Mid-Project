@@ -2,7 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const Blockchain = () => {
   return (
-    <div className="Bitcoin">
+    <div className="MainContainer">
+      <h1>Blockchain</h1>
       <h2>What is the Blockchain?</h2>
       <p>
         Blockchain sounds complex, and it certainly can be, but its basic

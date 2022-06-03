@@ -2,7 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const Bitcoin = () => {
   return (
-    <div className="Bitcoin">
+    <div className="MainContainer">
+      <h1>Bitcoin</h1>
       <h2>What is bitcoin?</h2>
       <p>
         Bitcoin is a digital currency that was created in January 2009. By

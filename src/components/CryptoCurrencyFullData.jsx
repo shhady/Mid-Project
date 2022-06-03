@@ -2,8 +2,9 @@ import React from "react";
 import "./styleCryptoData.css";
 const CryptoCurrencyFullData = () => {
   return (
-    <div className="Bitcoin">
-      <h1>What is cryptocurrency?</h1>
+    <div className="MainContainer">
+      <h1>Crypto Currency</h1>
+      <h2>What is cryptocurrency?</h2>
       <p>
         A cryptocurrency is a digital or virtual currency that is secured by
         cryptography, making counterfeiting or double spending nearly

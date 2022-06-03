@@ -2,7 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const Ethereum = () => {
   return (
-    <div className="Bitcoin">
+    <div className="MainContainer">
+      <h1>Ethereum</h1>
       <h2>What is Ethereum?</h2>
       <p>
         Launched in 2015, Ethereum is an open source blockchain-based

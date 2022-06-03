@@ -38,8 +38,8 @@ const Header = () => {
         <div className="dropdown">
           <button className="dropbtn">Analysis</button>
           <div className="dropdown-content">
-            <a href="#">Fundamental Analysis</a>
-            <a href="#">Technical Analysis</a>
+            <Link to="/Fundamental Analysis">Fundamental Analysis</Link>
+            <Link to="Technical Analysis">Technical Analysis</Link>
             <a href="#">Indicators</a>
             <a href="#">Patterns</a>
             <a href="#">Candle Sticks</a>

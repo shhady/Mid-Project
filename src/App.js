@@ -15,6 +15,8 @@ import Commodities from "./components/Commodities";
 import IndicesFullData from "./components/IndicesFullData";
 import Forex from "./components/Forex";
 import Portfolios from "./components/Portfolios";
+import FundamentalAnalysis from "./components/FundamentalAnalysis";
+import TechnicalAnalysis from "./components/TechnicalAnalysis";
 function App() {
   return (
     <div>
@@ -30,6 +32,17 @@ function App() {
           <Route path="/IndicesFullData" exact component={IndicesFullData} />
           <Route path="/Forex" exact component={Forex} />
           <Route path="/Portfolios" exact component={Portfolios} />
+          <Route
+            path="/Technical Analysis"
+            exact
+            component={TechnicalAnalysis}
+          />
+
+          <Route
+            path="/Fundamental Analysis"
+            exact
+            component={FundamentalAnalysis}
+          />
 
           <Route
             path="/ChooseBrokerFullData"

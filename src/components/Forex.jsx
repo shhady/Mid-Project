@@ -2,7 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const Forex = () => {
   return (
-    <div className="Bitcoin">
+    <div className="MainContainer">
+      <h1>Forex</h1>
       <h2>What is foreign exchange (Forex)?</h2>
       <p>
         Foreign exchange (Forex) is the trading of one currency for another. For

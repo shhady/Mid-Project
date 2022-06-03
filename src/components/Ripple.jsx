@@ -2,7 +2,8 @@ import React from "react";
 import "./styleCryptoData.css";
 const Ripple = () => {
   return (
-    <div className="Bitcoin">
+    <div className="MainContainer">
+      <h1>Ripple</h1>
       <h2>What is Ripple?</h2>
       <p>
         Ripple is a technology that acts as a cryptocurrency and digital payment
