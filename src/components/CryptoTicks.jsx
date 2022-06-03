@@ -2,6 +2,7 @@ import React from "react";
 import "./CryptoTicks.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const CryptoTicks = () => {
   const [cryptosData, setCryptosData] = useState(null);
   const url =
@@ -19,7 +20,7 @@ const CryptoTicks = () => {
   const CryptoTicksCards = () => {
     return cryptosData.map((crypto) => {
       return (
-        <div className="top">
+        <div className="top" key={crypto.name}>
           <img src={crypto.image} alt="" className="cryptoImg" />
           <div>
             <h5>{crypto.name}</h5>
@@ -44,25 +45,42 @@ const CryptoTicks = () => {
     <div className="Featured">
       <div className="container">
         <div className="left">
-          {/* <img
-            src="https://toppickinvestment.com/wp-content/uploads/2021/04/blockchain-network-cryptography-3774715.jpg"
-            alt=""
-            height="100%"
-            width="80%"
-            style={{
-              display: "flex",
-              selfAlign: "center",
-              borderRadius: "50%",
-            }}
-          /> */}
           <div className="blockchain">
-            <button className="btn-allCryptos">Read about Blockchain</button>
+            <Link to="/Blockchain">
+              {" "}
+              <button className="btn-allCryptos" style={{ width: "150px" }}>
+                Blockchain
+              </button>{" "}
+            </Link>
           </div>
+
+          <div>
+            <h3 style={{ textAlign: "center" }}>
+              Everything you need to know about{" "}
+            </h3>
+            <Link to="/Bitcoin">
+              <button className="btn-allCryptos">Bitcoin</button>
+            </Link>
+            <Link to="/Ethereum">
+              <button className="btn-allCryptos">Ethereum</button>
+            </Link>
+          </div>
+          <Link to="/Ripple">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <button className="btn-allCryptos">Ripple</button>
+            </div>
+          </Link>
         </div>
         <div className="right">
           <div className="card">
             <h2 style={{ textAlign: "center" }}>
-              Explore top 8 Crypto coins ranked by market cap
+              * Top 8 Crypto coins ranked by market cap
             </h2>
             {CryptoTicksCards()}
             <button className="btn-allCryptos">See more Cryptos</button>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
   // const [click, setClick] = useState(false);
   // const [menu, setMenu] = useState("menu");
@@ -12,7 +13,9 @@ const Header = () => {
     <div className="HeaderContainer">
       <div style={{ fontSize: ".8rem" }}>topPickInvestment</div>
       <div className="titles-header">
-        <button className="btn-header"> Home </button>
+        <Link to="/">
+          <button className="btn-header"> Home </button>
+        </Link>
         <div className="dropdown">
           <button className="dropbtn">Brokers</button>
           <div className="dropdown-content">
@@ -24,12 +27,12 @@ const Header = () => {
         <div className="dropdown">
           <button className="dropbtn">Markets</button>
           <div className="dropdown-content">
-            <a href="#">Crypto Currency</a>
-            <a href="#">Forex</a>
-            <a href="#">Commodities</a>
-            <a href="#">Stocks</a>
-            <a href="#">Indices</a>
-            <a href="#">Portfolios</a>
+            <Link to="/CryptoCurrencyFullData">Crypto Currency</Link>
+            <Link to="/Forex">Forex</Link>
+            <Link to="/Commodities">Commodities</Link>
+            <Link to="/StockMarket">Stocks</Link>
+            <Link to="/IndicesFullData">Indices</Link>
+            <Link to="/Portfolios">Portfolios</Link>
           </div>
         </div>
         <div className="dropdown">
