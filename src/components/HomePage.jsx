@@ -4,7 +4,7 @@ import CryptoTicks from "./CryptoTicks";
 import StocksTicks from "./StocksTicks";
 import Regulations from "./Regulations";
 import ChooseBroker from "./ChooseBroker";
-import NewComponent from "./Chartstocks";
+
 const HomePage = () => {
   return (
     <div className="WhyUs">
@@ -13,7 +13,6 @@ const HomePage = () => {
       <StocksTicks />
       <Regulations />
       <ChooseBroker />
-      <NewComponent />
     </div>
   );
 };

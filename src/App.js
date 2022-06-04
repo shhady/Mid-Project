@@ -54,6 +54,14 @@ function App() {
           />
           <Route
             exact
+            path="/economicCalendar"
+            render={() => {
+              window.location.href = "economicCalendar.html";
+            }}
+          />
+
+          <Route
+            exact
             path="/CryptoHeatMap"
             render={() => {
               window.location.href = "CryptoHeatMap.html";

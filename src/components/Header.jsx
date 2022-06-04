@@ -51,9 +51,9 @@ const Header = () => {
           <button className="dropbtn">Tools</button>
           <div className="dropdown-content">
             <Link to="ChartWidget">Chart</Link>
-            {/* <a href="#">Economic Calendar</a>
-            <a href="#">Top Movers</a>
-            <a href="#">Crypto Market</a>  */}
+            <Link to="economicCalendar">Economic Calendar</Link>
+            {/*<a href="#">Top Movers</a>
+            <a href="#">Crypto Market</a> */}
             <Link to="/Dividends">Dividends</Link>
             <Link to="Leverage">Leverage</Link>
           </div>

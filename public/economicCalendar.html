@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economic Calendar</title>
+</head>
+<style>
+.Nav{
+        height:10vh;
+        background-color:#333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button{
+        width:10rem;
+    }
+        a{
+            color: white;
+        }
+</style>
+<body>
+    <div class="Nav">
+        <nav>
+            <script>
+                document.write('<a href="http://localhost:3000/">Go Back To Main Page</a>');
+            </script>
+        </nav>
+    </div>
+  <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-copyright"><h1>Economic Calendar</h1></div>
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+    new TradingView.widget(
+  {
+  "colorTheme": "light",
+  "isTransparent": false,
+  "width": "510",
+  "height": "600",
+  "locale": "en",
+  "importanceFilter": "-1,0,1"
+})
+  </script>
+</div>
+
+<!-- TradingView Widget END -->
+  
+</body>
+</html>
