@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 const Header = () => {
   // const [click, setClick] = useState(false);
@@ -19,9 +18,10 @@ const Header = () => {
         <div className="dropdown">
           <button className="dropbtn">Brokers</button>
           <div className="dropdown-content">
-            <a href="#">eToro</a>
-            <a href="#">FXCM</a>
-            <a href="#">Interactive Brokers</a>
+            <h5>eToro</h5>
+
+            <h5>FXCM</h5>
+            <h5>Interactive Brokers</h5>
           </div>
         </div>
         <div className="dropdown">
@@ -39,23 +39,23 @@ const Header = () => {
           <button className="dropbtn">Analysis</button>
           <div className="dropdown-content">
             <Link to="/Fundamental Analysis">Fundamental Analysis</Link>
-            <Link to="Technical Analysis">Technical Analysis</Link>
-            <a href="#">Indicators</a>
-            <a href="#">Patterns</a>
-            <a href="#">Candle Sticks</a>
-            <a href="#">Support and Resistance</a>
-            <a href="#">Fibonacci</a>
+            <Link to="/Technical Analysis">Technical Analysis</Link>
+            <Link to="/Indicators">Indicators</Link>
+            <Link to="/Patterns">Patterns</Link>
+            <Link to="/Candle Sticks">Candle Sticks</Link>
+            <Link to="/SupportandResistance">Support and Resistance</Link>
+            <Link to="/Fibonacci">Fibonacci</Link>
           </div>
         </div>
         <div className="dropdown">
           <button className="dropbtn">Tools</button>
           <div className="dropdown-content">
-            <a href="#">Graphs</a>
-            <a href="#">Economic Calendar</a>
+            <Link to="ChartWidget">Chart</Link>
+            {/* <a href="#">Economic Calendar</a>
             <a href="#">Top Movers</a>
-            <a href="#">Crypto Market</a>
-            <a href="#">Dividends</a>
-            <a href="#">Leverage</a>
+            <a href="#">Crypto Market</a>  */}
+            <Link to="/Dividends">Dividends</Link>
+            <Link to="Leverage">Leverage</Link>
           </div>
         </div>
         <button className="btn-header"> Contact Us </button>

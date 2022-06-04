@@ -83,16 +83,10 @@ const CryptoTicks = () => {
               * Top 8 Crypto coins ranked by market cap
             </h2>
             {CryptoTicksCards()}
-            <button className="btn-allCryptos">See more Cryptos</button>
+            <button className="btn-allCryptos" style={{ width: "15rem" }}>
+              See more Cryptos
+            </button>
           </div>
-          {/* <div className="top">
-            <img src="" alt="btc" />
-            <div>
-              <h5>Bitcoin</h5>
-              <p>$4000</p>
-              <span>2.5%</span>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
