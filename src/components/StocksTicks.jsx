@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 
 const StocksTicks = () => {
   const [stocksData, setStocksData] = useState([1, 2, 3, 4, 5, 6]);
-  const accessKey = "7e02917e72194c9eb998c42393377ebd";
-  const url = `https://api.twelvedata.com/time_series?symbol=AAPL,AMZN,GOOG,MSFT,TSLA,NKE&interval=1min&apikey=${accessKey}`;
-  useEffect(() => {
-    const search = async () => {
-      const response = await axios.get(url);
-      // setStocksData(response.data);
-    };
-    // search();
-  }, []);
+  // const accessKey = "7e02917e72194c9eb998c42393377ebd";
+  // const url = `https://api.twelvedata.com/time_series?symbol=AAPL,AMZN,GOOG,MSFT,TSLA,NKE&interval=1min&apikey=${accessKey}`;
+  // useEffect(() => {
+  //   const search = async () => {
+  //     const response = await axios.get(url);
+  //     // setStocksData(response.data);
+  //   };
+  //   // search();
+  // }, []);
 
   console.log(stocksData);
   if (!stocksData) return null;
