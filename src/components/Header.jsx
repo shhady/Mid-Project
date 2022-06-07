@@ -33,7 +33,7 @@ const Header = () => {
     <div className="HeaderContainer">
       <div style={{ fontSize: ".8rem" }}>
         <Link to="/">
-          <img src="./images/logo.png" height="60px" width="60px" />
+          <img src="./images/logo.png" height="60px" width="60px" alt="#" />
         </Link>
       </div>
       <div className="titles-header">
@@ -43,10 +43,18 @@ const Header = () => {
         <div className="dropdown">
           <button className="dropbtn">Brokers</button>
           <div className="dropdown-content">
-            <h5>eToro</h5>
-
-            <h5>FXCM</h5>
-            <h5>Interactive Brokers</h5>
+            <a href="https://www.etoro.com" target="_blank">
+              eToro
+            </a>
+            <a href="https://www.fxcm.com" target="_blank">
+              FXCM
+            </a>
+            <a href="https://www.interactivebrokers.com" target="_blank">
+              Interactive Brokers
+            </a>
+            {/* <h5>eToro</h5> */}
+            {/* <h5>FXCM</h5>
+            <h5>Interactive Brokers</h5> */}
           </div>
         </div>
         <div className="dropdown">
@@ -224,9 +232,33 @@ const Header = () => {
                 <button className="dropbtn">Brokers</button>
                 {/* <div className="dropdown-content" style={{ width: "100px" }}> */}
 
-                <Link to="/CryptoCurrencyFullData">eToro</Link>
-                <Link to="/Forex">FXCM</Link>
-                <Link to="/Commodities">Interactive Brokers</Link>
+                <a
+                  href="https://www.etoro.com"
+                  target="_blank"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  eToro
+                </a>
+                <a
+                  href="https://www.fxcm.com"
+                  target="_blank"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  FXCM
+                </a>
+                <a
+                  href="https://www.interactivebrokers.com"
+                  target="_blank"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Interactive Brokers
+                </a>
                 {/* </div> */}
               </div>
               <div

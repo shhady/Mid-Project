@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import Person from "./Person";
-
+import "./questions.css";
 //* CRUD
 
 //? API to work with
@@ -133,7 +133,16 @@ export default class App1 extends React.Component {
               flexDirection: "column",
             }}
           >
-            <h1>Loading...</h1>
+            <div className="spinner">
+              <div className="loader">
+                <div className="balls_container">
+                  <div className="ball"></div>
+                  <div className="ball"></div>
+                  <div className="ball"></div>
+                </div>
+                <span>Loading...</span>
+              </div>
+            </div>
           </div>
         ) : (
           <>

@@ -1,0 +1,49 @@
+/* .icon {
+    position: fixed;
+    color: #fff;
+    animation: first_color .5s
+    ease-in-out infinite alternate;
+    top:75%;
+    left: 20px;
+    list-style: none;
+    cursor: pointer;
+    
+    }
+    li{
+       margin-top: 20px
+    }
+    
+    @keyframes first_color{
+        0%{
+            text-shadow:  0 0 10px #ff1177,
+            0 0 10px #441134, 0 0 30px #285AEB;
+        }
+    } */
+
+    .social-container {
+        background: #eee;
+        padding: 25px 50px;
+      }
+      a.social {
+        margin: 0 1rem;
+        transition: transform 250ms;
+        display: inline-block;
+      }
+      a.social:hover {
+        transform: translateY(-2px);
+      }
+      a.youtube {
+        color: #eb3223;
+      }
+      
+      a.facebook {
+        color: #4968ad;
+      }
+      
+      a.twitter {
+        color: #49a1eb;
+      }
+      
+      a.instagram {
+        color: black;
+      }

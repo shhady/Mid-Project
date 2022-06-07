@@ -5,7 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const StocksTicks = () => {
-  const [stocksData, setStocksData] = useState(null);
+  const [stocksData, setStocksData] = useState([]);
   const accessKey = "7e02917e72194c9eb998c42393377ebd";
   const url = `https://api.twelvedata.com/time_series?symbol=AAPL,AMZN,TSLA,GOOG,MSFT,FB&interval=1min&apikey=${accessKey}`;
   useEffect(() => {
@@ -124,46 +124,48 @@ const StocksTicks = () => {
         <div style={{ textAlign: "center", width: "100%" }}>
           <h2>Stocks</h2>
         </div>
-        <div className="stockcards">
-          <div className="rankedStocks">
-            <div
-              className="Cardstocks"
-              style={{ margin: "auto", marginTop: "1rem" }}
-            >
-              {insertDataAAPL()}
-            </div>
-            <div
-              className="Cardstocks"
-              style={{ margin: "auto", marginTop: "1rem" }}
-            >
-              {insertDataAMZN()}
-            </div>
-            <div
-              className="Cardstocks"
-              style={{ margin: "auto", marginTop: "1rem" }}
-            >
-              {insertDataTSLA()}
-            </div>
-            <div
-              className="Cardstocks"
-              style={{ margin: "auto", marginTop: "1rem" }}
-            >
-              {insertDataGOOG()}
-            </div>
-            <div
-              className="Cardstocks"
-              style={{ margin: "auto", marginTop: "1rem" }}
-            >
-              {insertDataMSFT()}
-            </div>
-            <div
-              className="Cardstocks"
-              style={{ margin: "auto", marginTop: "1rem" }}
-            >
-              {insertDataFB()}
+        {stocksData && (
+          <div className="stockcards">
+            <div className="rankedStocks">
+              <div
+                className="Cardstocks"
+                style={{ margin: "auto", marginTop: "1rem" }}
+              >
+                {/* {insertDataAAPL()} */}
+              </div>
+              <div
+                className="Cardstocks"
+                style={{ margin: "auto", marginTop: "1rem" }}
+              >
+                {/* {insertDataAMZN()} */}
+              </div>
+              <div
+                className="Cardstocks"
+                style={{ margin: "auto", marginTop: "1rem" }}
+              >
+                {/* {insertDataTSLA()} */}
+              </div>
+              <div
+                className="Cardstocks"
+                style={{ margin: "auto", marginTop: "1rem" }}
+              >
+                {/* {insertDataGOOG()} */}
+              </div>
+              <div
+                className="Cardstocks"
+                style={{ margin: "auto", marginTop: "1rem" }}
+              >
+                {/* {insertDataMSFT()} */}
+              </div>
+              <div
+                className="Cardstocks"
+                style={{ margin: "auto", marginTop: "1rem" }}
+              >
+                {/* {insertDataFB()} */}
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div style={{ paddingLeft: "7%" }}>
           <Link to="/StockMarket">
             <button className="btn-allCryptos" style={{ width: "40%" }}>
