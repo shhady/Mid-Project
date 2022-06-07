@@ -27,6 +27,12 @@ import Leverage from "./components/Leverage";
 import CryptoList from "./components/AllCryptosList";
 import { AuthProvider } from "../src/context/AuthContext";
 import App1 from "./components/questions";
+import GreenEnergy from "./components/GreenEnergy";
+import EditingGenomes from "./components/EditingGenomes";
+import SelfDrivingCars from "./components/SelfDrivingCars";
+import Ecommerce from "./components/Ecommerce";
+import Drones from "./components/Drones";
+import FoodTech from "./components/FoodTech";
 
 function App() {
   return (
@@ -52,6 +58,12 @@ function App() {
             <Route path="/Leverage" exact component={Leverage} />
             <Route path="/CryptoList" exact component={CryptoList} />
             <Route path="/questions" exact component={App1} />
+            <Route path="/GreenEnergy" exact component={GreenEnergy} />
+            <Route path="/EditingGenomes" exact component={EditingGenomes} />
+            <Route path="/SelfDrivingCars" exact component={SelfDrivingCars} />
+            <Route path="/Ecommerce" exact component={Ecommerce} />
+            <Route path="/Drones" exact component={Drones} />
+            <Route path="/FoodTech" exact component={FoodTech} />
 
             <Route
               exact

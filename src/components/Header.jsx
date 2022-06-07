@@ -12,7 +12,7 @@ const Header = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const nameRef = useRef();
-
+  const [menu, setMenu] = useState(false);
   async function handleSubmit(e) {
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -31,7 +31,11 @@ const Header = () => {
 
   return (
     <div className="HeaderContainer">
-      <div style={{ fontSize: ".8rem" }}>topPickInvestment</div>
+      <div style={{ fontSize: ".8rem" }}>
+        <Link to="/">
+          <img src="./images/logo.png" height="60px" width="60px" />
+        </Link>
+      </div>
       <div className="titles-header">
         <Link to="/">
           <button className="btn-header"> Home </button>
@@ -79,7 +83,7 @@ const Header = () => {
             <Link to="Leverage">Leverage</Link>
           </div>
         </div>
-        <button className="btn-header"> Contact Us </button>
+        {/* <button className="btn-header"> Contact Us </button> */}
       </div>
       <div>
         <div className="dropdown">
@@ -104,7 +108,7 @@ const Header = () => {
           <button className="dropbtn" style={{ fontWeight: "bold" }}>
             Sign Up
           </button>
-          <div className="dropdown-content" style={{ width: "12rem" }}>
+          <div className="dropdown-content">
             {error && (
               <div
                 style={{
@@ -148,7 +152,263 @@ const Header = () => {
         </div>
       </div>
       <div className="MenuMobile">
-        <button>menu</button>
+        <button
+          onClick={() => {
+            setMenu(true);
+          }}
+        >
+          menu
+        </button>
+        <div className="MenuMobileTransition">
+          {menu && (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column",
+                backgroundColor: "#eeeeee",
+                justifyContent: "space-evenly",
+                position: "fixed",
+                top: "0px",
+                height: "100vh",
+                width: "110vw",
+                marginLeft: "-80vw",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  <button
+                    onClick={() => {
+                      setMenu(false);
+                    }}
+                  >
+                    X
+                  </button>
+                </div>
+                <div>
+                  <Link to="/">
+                    <button
+                      style={{ textAlign: "start", fontWeight: "bold" }}
+                      className="btn-header"
+                      onClick={() => {
+                        setMenu(false);
+                      }}
+                    >
+                      Home{" "}
+                    </button>
+                  </Link>
+                </div>
+              </div>
+              <div
+                className="dropdown"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                <button className="dropbtn">Brokers</button>
+                {/* <div className="dropdown-content" style={{ width: "100px" }}> */}
+
+                <Link to="/CryptoCurrencyFullData">eToro</Link>
+                <Link to="/Forex">FXCM</Link>
+                <Link to="/Commodities">Interactive Brokers</Link>
+                {/* </div> */}
+              </div>
+              <div
+                className="dropdown"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                <button className="dropbtn">Markets</button>
+                {/* <div className="dropdown-content"> */}
+                <Link
+                  to="/CryptoCurrencyFullData"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Crypto Currency
+                </Link>
+                <Link
+                  to="/Forex"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Forex
+                </Link>
+                <Link
+                  to="/Commodities"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Commodities
+                </Link>
+                <Link
+                  to="/StockMarket"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Stocks
+                </Link>
+                <Link
+                  to="/IndicesFullData"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Indices
+                </Link>
+                <Link
+                  to="/Portfolios"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Portfolios
+                </Link>
+                {/* </div> */}
+              </div>
+              <div
+                className="dropdown"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                <button className="dropbtn">Analysis</button>
+                {/* <div className="dropdown-content"> */}
+                <Link
+                  to="/Fundamental Analysis"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Fundamental Analysis
+                </Link>
+                <Link
+                  to="/Technical Analysis"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Technical Analysis
+                </Link>
+                <Link
+                  to="/Indicators"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Indicators
+                </Link>
+                <Link
+                  to="/Patterns"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Patterns
+                </Link>
+                <Link
+                  to="/Candle Sticks"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Candle Sticks
+                </Link>
+                <Link
+                  to="/SupportandResistance"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Support and Resistance
+                </Link>
+                <Link
+                  to="/Fibonacci"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Fibonacci
+                </Link>
+                {/* </div> */}
+              </div>
+              <div
+                className="dropdown"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                <button className="dropbtn">Tools</button>
+                {/* <div className="dropdown-content"> */}
+                <Link
+                  to="ChartWidget"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Chart
+                </Link>
+                <Link
+                  to="economicCalendar"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Economic Calendar
+                </Link>
+                {/*<a href="#">Top Movers</a>
+            <a href="#">Crypto Market</a> */}
+                <Link
+                  to="/Dividends"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Dividends
+                </Link>
+                <Link
+                  to="Leverage"
+                  onClick={() => {
+                    setMenu(false);
+                  }}
+                >
+                  Leverage
+                </Link>
+                {/* </div> */}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

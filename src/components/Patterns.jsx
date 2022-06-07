@@ -18,11 +18,13 @@ const Patterns = () => {
         <img
           src="https://toppickinvestment.com/wp-content/uploads/2021/04/image-2.png"
           alt="bullish"
+          width="100%"
         />
         <h3>Bearish patterns:</h3>
         <img
           src="https://toppickinvestment.com/wp-content/uploads/2021/04/image-3.png"
           alt="Bearish"
+          width="100%"
         />
       </p>
     </div>

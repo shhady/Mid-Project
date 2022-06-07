@@ -2,7 +2,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNyADzB9NG9jjNqYjbBjzPFa50gEt9vOA",
+  apiKey: "",
   authDomain: "mid-project-e78ef.firebaseapp.com",
   projectId: "mid-project-e78ef",
   storageBucket: "mid-project-e78ef.appspot.com",
@@ -13,3 +13,4 @@ firebase.initializeApp(firebaseConfig);
 // const app = initializeApp();
 export const auth = firebase.auth();
 // export default app;
+// AIzaSyBNyADzB9NG9jjNqYjbBjzPFa50gEt9vOA

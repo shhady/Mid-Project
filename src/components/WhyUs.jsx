@@ -7,7 +7,7 @@ const WhyUs = () => {
       <div className="heroContainer">
         {/* left side */}
         <div style={{ width: "50%" }}>
-          <h1 style={{ textAlign: "center", marginTop: "40px" }}>
+          <h1 style={{ textAlign: "center", marginTop: "60px" }}>
             EXPLORE THE FINANCIAL MARKETS
           </h1>
           <h5 style={{ textAlign: "center" }}>

@@ -22,7 +22,7 @@ export default class App1 extends React.Component {
         "https://629de115c6ef9335c0a8f53f.mockapi.io/questions"
       );
       this.setState({ questions: data, isSpinning: false }, () => {
-        console.log(this.state.questions);
+        // console.log(this.state.questions);
       });
     } catch (e) {
       console.log(e);
@@ -68,32 +68,40 @@ export default class App1 extends React.Component {
   };
 
   //   //? PUT
-  //   handleUpdate = async (id, newName) => {
-  //     this.setState({ isSpinning: true });
-  //     const personToUpdate = this.state.peopleArr.find(
-  //       (person) => person.id === id
-  //     );
-  //     const updatedPerson = { ...personToUpdate, name: newName };
-  //     const { data } = await axios.put(
-  //       `https://629de115c6ef9335c0a8f53f.mockapi.io/questions${id}`,
-  //       updatedPerson
-  //     );
-  //     this.setState((prev) => {
-  //       return {
-  //         peopleArr: prev.peopleArr.map((person) => {
-  //           if (person.id === id) {
-  //             return data;
-  //           }
-  //           return person;
-  //         }),
-  //         isSpinning: false,
-  //       };
-  //     });
-  //   };
+  handleUpdate = async (id, newAnswer) => {
+    this.setState({ isSpinning: true });
+    const replyToUpdate = this.state.questions.find((q) => q.id === id);
+    const newAnswers = [newAnswer, ...replyToUpdate.answers];
+    const updatedReply = {
+      ...replyToUpdate,
+      answers: newAnswers,
+    };
+    const { data } = await axios.put(
+      `https://629de115c6ef9335c0a8f53f.mockapi.io/questions/${id}`,
+      updatedReply
+    );
+    console.log(newAnswers);
+    this.setState((prev) => {
+      return {
+        questions: prev.questions.map((person) => {
+          if (person.id === id) {
+            return data;
+          }
+          return person;
+        }),
+        isSpinning: false,
+      };
+    });
+  };
 
+  paintAnswers = () => {
+    this.state.newAnswers.map((answer) => {
+      return console.log(answer);
+    });
+  };
   //?UI
   paintPeople = () => {
-    return this.state.questions.map(({ name, img, id, Questions, Answers }) => {
+    return this.state.questions.map(({ name, img, id, Questions, answers }) => {
       return (
         <Person
           key={id}
@@ -101,9 +109,10 @@ export default class App1 extends React.Component {
           img={img}
           id={id}
           Questions={Questions}
-          Answers={Answers}
+          answers={answers}
           handleDelete={this.handleDelete}
-          //   handleUpdate={this.handleUpdate}
+          handleUpdate={this.handleUpdate}
+          //   paintAnswers={this.paintAnswers}
         />
       );
     });
@@ -116,7 +125,16 @@ export default class App1 extends React.Component {
     return (
       <div className="wrapper" style={{ marginTop: "50px" }}>
         {this.state.isSpinning ? (
-          <h1>Spinner</h1>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+            }}
+          >
+            <h1>Loading...</h1>
+          </div>
         ) : (
           <>
             <div
@@ -131,14 +149,19 @@ export default class App1 extends React.Component {
                 onChange={this.handleInputChange}
                 value={this.state.newQuestion}
                 placeholder="ask question"
-                style={{ width: "40%", height: "30px" }}
+                style={{ width: "40%", height: "30px", marginTop: "1rem" }}
               />
 
-              <button style={{ height: "35px" }} onClick={this.handleCreate}>
+              <button
+                style={{ height: "35px", marginTop: "1rem" }}
+                onClick={this.handleCreate}
+              >
                 POST IT
               </button>
             </div>
-            <div>{this.paintPeople()}</div>
+            <div style={{ width: "80%", margin: "auto" }}>
+              {this.paintPeople()}
+            </div>
           </>
         )}
       </div>

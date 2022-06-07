@@ -191,61 +191,108 @@ const StocksTicks = () => {
         >
           <div>
             {" "}
-            <h2 style={{ marginLeft: "1rem", textAlign: "center" }}>
+            <h2
+              style={{
+                textAlign: "center",
+                width: "100%",
+                marginTop: "0.4rem",
+              }}
+            >
               Investment Portfolios
             </h2>
           </div>
         </div>{" "}
         <div>
           <div className="PorfolioCards">
-            <div className="portfoliocard" style={{ margin: "auto" }}>
+            <div
+              className="portfoliocard"
+              style={{ margin: "auto", width: "120px" }}
+            >
               <img
-                src="https://www.coe.int/documents/10518249/62196672/Genom-Editing/c68fa21f-989a-fef0-2bf6-723be40c55fd"
-                style={{ borderRadius: "10px" }}
+                src="https://d1u4v6449fgzem.cloudfront.net/2020/03/The-Ecommerce-Business-Model-Explained.jpg"
+                style={{ borderRadius: "10px", height: "75%" }}
                 alt="#"
               />
-              <button className="btn-allCryptos" style={{ width: "100%" }}>
-                Editing Genomes
-              </button>
+              <Link to="Ecommerce">
+                <button className="btn-allportfolios" style={{ width: "100%" }}>
+                  Ecommerce
+                </button>
+              </Link>
             </div>
             <div
               className="portfoliocard"
-              style={{ margin: "auto", marginTop: "1rem" }}
+              style={{ margin: "auto", width: "120px" }}
+            >
+              <img
+                src="https://3z6mv8219w2s2w196j1dkzga-wpengine.netdna-ssl.com/wp-content/uploads/2020/09/agrifood-tech-istock.jpg"
+                style={{ borderRadius: "10px", height: "75%" }}
+                alt="#"
+              />
+              <Link to="/FoodTech">
+                <button className="btn-allportfolios" style={{ width: "100%" }}>
+                  Food Tech
+                </button>
+              </Link>
+            </div>
+            <div
+              className="portfoliocard"
+              style={{ margin: "auto", width: "120px" }}
+            >
+              <img
+                src="https://www.coe.int/documents/10518249/62196672/Genom-Editing/c68fa21f-989a-fef0-2bf6-723be40c55fd"
+                style={{ borderRadius: "10px", height: "75%" }}
+                alt="#"
+              />
+              <Link to="/EditingGenomes">
+                <button className="btn-allportfolios" style={{ width: "100%" }}>
+                  Editing Genomes
+                </button>
+              </Link>
+            </div>
+            <div
+              className="portfoliocard"
+              style={{ margin: "auto", marginTop: "1rem", width: "120px" }}
             >
               <img
                 src="https://i.hurimg.com/i/hdn/75/0x0/62271ff14e3fe01bfcb3c7a8.jpg"
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "10px", height: "75%" }}
                 alt="#"
               />
-              <button className="btn-allCryptos" style={{ width: "100%" }}>
-                Green Energy
-              </button>
+              <Link to="/GreenEnergy">
+                <button className="btn-allportfolios" style={{ width: "100%" }}>
+                  Green Energy
+                </button>
+              </Link>
             </div>
             <div
               className="portfoliocard"
-              style={{ margin: "auto", marginTop: "1rem" }}
+              style={{ margin: "auto", marginTop: "1rem", width: "120px" }}
             >
               <img
                 src="https://valientemott.com/wp-content/uploads/2020/05/self-driving-cars-1030x564.jpg"
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "10px", height: "75%" }}
                 alt="#"
               />
-              <button className="btn-allCryptos" style={{ width: "100%" }}>
-                Self Driving Cars
-              </button>
+              <Link to="/SelfDrivingCars">
+                <button className="btn-allportfolios" style={{ width: "100%" }}>
+                  Self Driving Cars
+                </button>
+              </Link>
             </div>
             <div
               className="portfoliocard"
-              style={{ margin: "auto", marginTop: "1rem" }}
+              style={{ margin: "auto", marginTop: "1rem", width: "120px" }}
             >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9BIphnvV3nFJZMABURsNHvF6vVCGPMnG9JQ&usqp=CAU"
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "10px", height: "75%" }}
                 alt="#"
               />
-              <button className="btn-allCryptos" style={{ width: "100%" }}>
-                Drones
-              </button>
+              <Link to="/Drones">
+                <button className="btn-allportfolios" style={{ width: "100%" }}>
+                  Drones
+                </button>
+              </Link>
             </div>
           </div>
           <div style={{ paddingLeft: "7%" }}>
