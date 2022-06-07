@@ -94,3 +94,14 @@
     align-items: center;
     align-self: center;
 }
+.cryptocards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search{
+    width: 100%;
+    margin-bottom: 2rem;
+    border: 3px solid #333;
+    height: 30px;
+}

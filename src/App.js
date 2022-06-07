@@ -24,79 +24,77 @@ import SupportResistance from "./components/SupportResistance";
 import Fibonacci from "./components/Fibonacci";
 import Dividends from "./components/Dividends";
 import Leverage from "./components/Leverage";
+import CryptoList from "./components/AllCryptosList";
+import { AuthProvider } from "../src/context/AuthContext";
+import App1 from "./components/questions";
+
 function App() {
   return (
     <div>
       <div>
-        <BrowserRouter>
-          <Header />
-          <Route path="/" exact component={HomePage} />
-          <Route path="/Bitcoin" exact component={Bitcoin} />
-          <Route path="/Ethereum" exact component={Ethereum} />
-          <Route path="/Ripple" exact component={Ripple} />
-          <Route path="/Blockchain" exact component={Blockchain} />
-          <Route path="/Commodities" exact component={Commodities} />
-          <Route path="/IndicesFullData" exact component={IndicesFullData} />
-          <Route path="/Forex" exact component={Forex} />
-          <Route path="/Portfolios" exact component={Portfolios} />
-          <Route path="/Indicators" exact component={Indicators} />
-          <Route path="/Candle Sticks" exact component={CandleSticks} />
-          <Route path="/Patterns" exact component={Patterns} />
-          <Route path="/Fibonacci" exact component={Fibonacci} />
-          <Route path="/Dividends" exact component={Dividends} />
-          <Route path="/Leverage" exact component={Leverage} />
-          <Route
-            exact
-            path="/ChartWidget"
-            render={() => {
-              window.location.href = "ChartWidget.html";
-            }}
-          />
-          <Route
-            exact
-            path="/economicCalendar"
-            render={() => {
-              window.location.href = "economicCalendar.html";
-            }}
-          />
+        <AuthProvider>
+          <BrowserRouter>
+            <Header />
+            <Route path="/" exact component={HomePage} />
+            <Route path="/Bitcoin" exact component={Bitcoin} />
+            <Route path="/Ethereum" exact component={Ethereum} />
+            <Route path="/Ripple" exact component={Ripple} />
+            <Route path="/Blockchain" exact component={Blockchain} />
+            <Route path="/Commodities" exact component={Commodities} />
+            <Route path="/IndicesFullData" exact component={IndicesFullData} />
+            <Route path="/Forex" exact component={Forex} />
+            <Route path="/Portfolios" exact component={Portfolios} />
+            <Route path="/Indicators" exact component={Indicators} />
+            <Route path="/Candle Sticks" exact component={CandleSticks} />
+            <Route path="/Patterns" exact component={Patterns} />
+            <Route path="/Fibonacci" exact component={Fibonacci} />
+            <Route path="/Dividends" exact component={Dividends} />
+            <Route path="/Leverage" exact component={Leverage} />
+            <Route path="/CryptoList" exact component={CryptoList} />
+            <Route path="/questions" exact component={App1} />
 
-          <Route
-            exact
-            path="/CryptoHeatMap"
-            render={() => {
-              window.location.href = "CryptoHeatMap.html";
-            }}
-          />
-          <Route
-            path="/SupportandResistance"
-            exact
-            component={SupportResistance}
-          />
-
-          <Route
-            path="/Technical Analysis"
-            exact
-            component={TechnicalAnalysis}
-          />
-
-          <Route
-            path="/Fundamental Analysis"
-            exact
-            component={FundamentalAnalysis}
-          />
-
-          <Route
-            path="/ChooseBrokerFullData"
-            exact
-            component={ChooseBrokerFullData}
-          />
-          <Route
-            path="/CryptoCurrencyFullData"
-            exact
-            component={CryptoCurrencyFullData}
-          />
-          <Route path="/StockMarket" exact component={StockMarket} />
-        </BrowserRouter>
+            <Route
+              exact
+              path="/ChartWidget"
+              render={() => {
+                window.location.href = "ChartWidget.html";
+              }}
+            />
+            <Route
+              exact
+              path="/economicCalendar"
+              render={() => {
+                window.location.href = "economicCalendar.html";
+              }}
+            />
+            <Route
+              path="/SupportandResistance"
+              exact
+              component={SupportResistance}
+            />
+            <Route
+              path="/Technical Analysis"
+              exact
+              component={TechnicalAnalysis}
+            />
+            <Route
+              path="/Fundamental Analysis"
+              exact
+              component={FundamentalAnalysis}
+            />
+            <Route
+              path="/ChooseBrokerFullData"
+              exact
+              component={ChooseBrokerFullData}
+            />
+            <Route
+              path="/CryptoCurrencyFullData"
+              exact
+              component={CryptoCurrencyFullData}
+            />
+            <Route path="/StockMarket" exact component={StockMarket} />
+          </BrowserRouter>
+        </AuthProvider>
       </div>
     </div>
   );

@@ -20,7 +20,11 @@ const CryptoTicks = () => {
   const CryptoTicksCards = () => {
     return cryptosData.map((crypto) => {
       return (
-        <div className="top" key={crypto.name}>
+        <div
+          className="top"
+          key={crypto.name}
+          style={{ margin: "auto", marginTop: "1rem" }}
+        >
           <img src={crypto.image} alt="" className="cryptoImg" />
           <div>
             <h5>{crypto.name}</h5>
@@ -54,7 +58,7 @@ const CryptoTicks = () => {
             </Link>
           </div>
 
-          <div>
+          <div className="knowMore">
             <h3 style={{ textAlign: "center" }}>
               Everything you need to know about{" "}
             </h3>
@@ -79,13 +83,19 @@ const CryptoTicks = () => {
         </div>
         <div className="right">
           <div className="card">
-            <h2 style={{ textAlign: "center" }}>
-              * Top 8 Crypto coins ranked by market cap
-            </h2>
-            {CryptoTicksCards()}
-            <button className="btn-allCryptos" style={{ width: "15rem" }}>
-              See more Cryptos
-            </button>
+            <div>
+              <h2 style={{ textAlign: "center" }}>
+                * Top 8 Crypto coins ranked by market cap
+              </h2>
+            </div>
+            <div className="cryptocards">
+              {CryptoTicksCards()}
+              <Link to="CryptoList">
+                <button className="btn-allCryptos" style={{ width: "20rem" }}>
+                  See more Cryptos
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

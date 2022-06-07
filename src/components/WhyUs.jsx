@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 const WhyUs = () => {
   return (
     <div className="Hero">
@@ -16,16 +17,18 @@ const WhyUs = () => {
         </div>
 
         <div style={{ width: "30%" }}>
-          <button
-            style={{
-              width: "100%",
-              height: "50px",
-              borderRadius: "10px",
-              cursor: "pointer",
-            }}
-          >
-            Questions & Answers
-          </button>
+          <Link to="questions">
+            <button
+              style={{
+                width: "100%",
+                height: "50px",
+                borderRadius: "10px",
+                cursor: "pointer",
+              }}
+            >
+              Questions & Answers
+            </button>
+          </Link>
         </div>
       </div>
       {/* right side */}
