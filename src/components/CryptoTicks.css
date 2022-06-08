@@ -105,3 +105,14 @@
     border: 3px solid #333;
     height: 30px;
 }
+
+
+@media (max-width: 622px) {
+    .symbols{
+        display: none;
+    }
+    .imageAndName{
+        display:flex;
+        flex-direction: column;
+    }
+}

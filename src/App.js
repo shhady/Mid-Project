@@ -26,7 +26,7 @@ import Dividends from "./components/Dividends";
 import Leverage from "./components/Leverage";
 import CryptoList from "./components/AllCryptosList";
 import { AuthProvider } from "../src/context/AuthContext";
-import App1 from "./components/questions";
+import QuestionsBridge from "./components/questionsBridge";
 import GreenEnergy from "./components/GreenEnergy";
 import EditingGenomes from "./components/EditingGenomes";
 import SelfDrivingCars from "./components/SelfDrivingCars";
@@ -57,7 +57,7 @@ function App() {
             <Route path="/Dividends" exact component={Dividends} />
             <Route path="/Leverage" exact component={Leverage} />
             <Route path="/CryptoList" exact component={CryptoList} />
-            <Route path="/questions" exact component={App1} />
+            <Route path="/questions" exact component={QuestionsBridge} />
             <Route path="/GreenEnergy" exact component={GreenEnergy} />
             <Route path="/EditingGenomes" exact component={EditingGenomes} />
             <Route path="/SelfDrivingCars" exact component={SelfDrivingCars} />

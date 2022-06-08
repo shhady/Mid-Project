@@ -33,18 +33,29 @@ const CryptoList = () => {
     return filteredCrypto.map((crypto) => {
       return (
         <div
+          key={crypto.symbol}
           style={{
-            display: "flex",
-            justifyContent: "space-between",
+            // display: "flex",
+            // justifyContent: "space-between",
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+
             border: "1px solid #333",
           }}
         >
-          <div style={{ height: "30px" }}>
-            <img src={crypto.image} alt={crypto.id} height="20px" />
+          <div style={{ height: "fit-content" }} className="imageAndName">
+            <img
+              src={crypto.image}
+              alt={crypto.id}
+              height="20px"
+              width="20px"
+            />
             {"  "}
             {crypto.name}
             {"    "}
-            {/* <span style={{ color: "grey" }}>{crypto.symbol.toUpperCase()}</span> */}
+            <span className="symbols" style={{ color: "grey" }}>
+              {crypto.symbol.toUpperCase()}
+            </span>
           </div>
           <div style={{ textAlign: "start" }}>
             ${crypto.current_price.toLocaleString()}
@@ -78,8 +89,8 @@ const CryptoList = () => {
       />
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
           border: "3px solid #333",
           fontWeight: "bold",
         }}

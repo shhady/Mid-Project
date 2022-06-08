@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import Person from "./Person";
 import "./questions.css";
+// import { useAuth } from "../context/AuthContext"
 //* CRUD
 
 //? API to work with
@@ -22,7 +23,7 @@ export default class App1 extends React.Component {
         "https://629de115c6ef9335c0a8f53f.mockapi.io/questions"
       );
       this.setState({ questions: data, isSpinning: false }, () => {
-        // console.log(this.state.questions);
+        console.log(this.props.currentUser);
       });
     } catch (e) {
       console.log(e);
@@ -106,6 +107,7 @@ export default class App1 extends React.Component {
         <Person
           key={id}
           name={name}
+          //   postID={this.props.currentUser.uid}
           img={img}
           id={id}
           Questions={Questions}
@@ -153,20 +155,29 @@ export default class App1 extends React.Component {
                 justifyContent: "center",
               }}
             >
-              <input
-                id="newQuestion"
-                onChange={this.handleInputChange}
-                value={this.state.newQuestion}
-                placeholder="ask question"
-                style={{ width: "40%", height: "30px", marginTop: "1rem" }}
-              />
-
-              <button
-                style={{ height: "35px", marginTop: "1rem" }}
-                onClick={this.handleCreate}
-              >
-                POST IT
-              </button>
+              {this.props.currentUser && (
+                <>
+                  {" "}
+                  <input
+                    id="newQuestion"
+                    onChange={this.handleInputChange}
+                    value={this.state.newQuestion}
+                    placeholder="ask question"
+                    style={{ width: "40%", height: "30px", marginTop: "1rem" }}
+                  />
+                  <button
+                    style={{ height: "35px", marginTop: "1rem" }}
+                    onClick={this.handleCreate}
+                  >
+                    POST IT
+                  </button>
+                </>
+              )}
+              {!this.props.currentUser && (
+                <div>
+                  <h1>Sign in to post your question</h1>
+                </div>
+              )}
             </div>
             <div style={{ width: "80%", margin: "auto" }}>
               {this.paintPeople()}

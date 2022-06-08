@@ -9,26 +9,78 @@ const Header = () => {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
+  const { login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const nameRef = useRef();
   const [menu, setMenu] = useState(false);
+  const [signUp, setSignUp] = useState("Sign Up");
+  const [logIn, setLogIn] = useState("Log In");
+  const [showDrop, setShowDrop] = useState(true);
+  const emailRefLog = useRef();
+  const passwordRefLog = useRef();
+  const { logout } = useAuth();
+  const { currentUser } = useAuth();
   async function handleSubmit(e) {
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match");
     }
     try {
-      console.log(emailRef.current.value, passwordRef.current.value);
+      console.log(
+        emailRef.current.value,
+        passwordRef.current.value,
+        nameRef.current.value
+      );
+      setSignUp(nameRef.current.value);
+      setShowDrop(false);
+      setLogIn("");
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
     } catch {
-      setError("Failed to create an account");
+      setError(
+        "Failed to create an account, Password must be at least 6 characters"
+      );
+      setSignUp("Sign Up");
+      setLogIn("Log In");
+      setShowDrop(true);
+    }
+    setLoading(false);
+  }
+  async function handleSubmitLogIn(e) {
+    e.preventDefault();
+    // if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+    //   return setError("Passwords do not match");
+    // }
+    try {
+      console.log(emailRefLog.current.value, passwordRefLog.current.value);
+      setSignUp("welcome Back");
+      setShowDrop(false);
+      setLogIn("");
+      setError("");
+      setLoading(true);
+      await login(emailRefLog.current.value, passwordRefLog.current.value);
+    } catch {
+      setError("Failed to sign in");
+      setSignUp("Sign Up");
+      setLogIn("Log In");
+      setShowDrop(true);
     }
     setLoading(false);
   }
 
+  async function handleLogOut() {
+    setError("");
+    try {
+      await logout();
+      setSignUp("Sign Up");
+      setLogIn("Log In");
+      setShowDrop(true);
+    } catch {
+      setError("failed to log out");
+    }
+  }
   return (
     <div className="HeaderContainer">
       <div style={{ fontSize: ".8rem" }}>
@@ -43,13 +95,17 @@ const Header = () => {
         <div className="dropdown">
           <button className="dropbtn">Brokers</button>
           <div className="dropdown-content">
-            <a href="https://www.etoro.com" target="_blank">
+            <a href="https://www.etoro.com" target="_blank" rel="noreferrer">
               eToro
             </a>
-            <a href="https://www.fxcm.com" target="_blank">
+            <a href="https://www.fxcm.com" target="_blank" rel="noreferrer">
               FXCM
             </a>
-            <a href="https://www.interactivebrokers.com" target="_blank">
+            <a
+              href="https://www.interactivebrokers.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               Interactive Brokers
             </a>
             {/* <h5>eToro</h5> */}
@@ -96,67 +152,90 @@ const Header = () => {
       <div>
         <div className="dropdown">
           <button className="dropbtn" style={{ fontWeight: "bold" }}>
-            Log In
+            {logIn}
           </button>
-          <div className="dropdown-content">
-            <div>
-              <label>Email</label>
-              <input />
+          {showDrop && (
+            <div className="dropdown-content">
+              {error && (
+                <div
+                  style={{
+                    backgroundColor: "#d77272",
+                    borderRadius: "5px",
+                    textAlign: "center",
+                    height: "fit-content",
+                  }}
+                >
+                  {error}
+                </div>
+              )}
+              <form onSubmit={handleSubmitLogIn}>
+                <div>
+                  <label>Email</label>
+                  <input type="email" ref={emailRefLog} />
+                </div>
+                <div>
+                  <label>Password</label>
+                  <input type="password" ref={passwordRefLog} />
+                </div>
+                <div>
+                  <button style={{ marginTop: "10px" }}>Log In</button>
+                </div>
+              </form>
             </div>
-            <div>
-              <label>Password</label>
-              <input />
-            </div>
-            <div>
-              <button style={{ marginTop: "10px" }}>Log In</button>
-            </div>
-          </div>
+          )}
         </div>
         <div className="dropdown">
           <button className="dropbtn" style={{ fontWeight: "bold" }}>
-            Sign Up
+            {signUp}
           </button>
-          <div className="dropdown-content">
-            {error && (
-              <div
-                style={{
-                  backgroundColor: "#d77272",
-                  borderRadius: "5px",
-                  textAlign: "center",
-                  height: "1.5rem",
-                }}
-              >
-                {error}
-              </div>
-            )}
-            <form onSubmit={handleSubmit}>
-              <div id="Username">
-                <label>Full Name</label>
-                <input type="text" ref={nameRef} />
-              </div>
-              <div id="email">
-                <label>Email</label>
-                <input type="email" ref={emailRef} />
-              </div>
-              <div id="password">
-                <label>Password</label>
-                <input type="password" ref={passwordRef} />
-              </div>
-              <div id="password-confirm">
-                <label>Confirm Password</label>
-                <input type="password" ref={passwordConfirmRef} />
-              </div>
+          {showDrop && (
+            <div className="dropdown-content">
+              {error && (
+                <div
+                  style={{
+                    backgroundColor: "#d77272",
+                    borderRadius: "5px",
+                    textAlign: "center",
+                    height: "fit-content",
+                  }}
+                >
+                  {error}
+                </div>
+              )}
+              <form onSubmit={handleSubmit}>
+                <div id="Username">
+                  <label>Full Name</label>
+                  <input type="text" ref={nameRef} />
+                </div>
+                <div id="email">
+                  <label>Email</label>
+                  <input type="email" ref={emailRef} />
+                </div>
+                <div id="password">
+                  <label>Password</label>
+                  <input type="password" ref={passwordRef} />
+                </div>
+                <div id="password-confirm">
+                  <label>Confirm Password</label>
+                  <input type="password" ref={passwordConfirmRef} />
+                </div>
 
-              <button
-                style={{ marginTop: "10px" }}
-                type="submit"
-                disabled={loading}
-              >
-                Sign Up
-              </button>
-            </form>
-          </div>
+                <button
+                  style={{ marginTop: "10px" }}
+                  type="submit"
+                  disabled={loading}
+                >
+                  Sign Up
+                </button>
+              </form>
+            </div>
+          )}
           {/* </AuthProvider> */}
+          {currentUser && (
+            <div>
+              <button onClick={handleLogOut}>Log Out</button>
+            </div>
+          )}
         </div>
       </div>
       <div className="MenuMobile">
@@ -235,6 +314,7 @@ const Header = () => {
                 <a
                   href="https://www.etoro.com"
                   target="_blank"
+                  rel="noreferrer"
                   onClick={() => {
                     setMenu(false);
                   }}
@@ -244,6 +324,7 @@ const Header = () => {
                 <a
                   href="https://www.fxcm.com"
                   target="_blank"
+                  rel="noreferrer"
                   onClick={() => {
                     setMenu(false);
                   }}
@@ -253,6 +334,7 @@ const Header = () => {
                 <a
                   href="https://www.interactivebrokers.com"
                   target="_blank"
+                  rel="noreferrer"
                   onClick={() => {
                     setMenu(false);
                   }}
