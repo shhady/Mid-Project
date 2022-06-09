@@ -2,7 +2,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: "AIzaSyBNyADzB9NG9jjNqYjbBjzPFa50gEt9vOA",
   authDomain: "mid-project-e78ef.firebaseapp.com",
   projectId: "mid-project-e78ef",
   storageBucket: "mid-project-e78ef.appspot.com",
