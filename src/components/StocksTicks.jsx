@@ -8,13 +8,13 @@ const StocksDataManual = [
   {
     image: "/images/apple.png",
     name: "APPLE",
-    price: "$148.11",
+    price: "$147.96",
   },
-  { image: "/images/msft.png", name: "MICROSOFT", price: "$270.29" },
-  { image: "/images/amazon.png", name: "AMAZON", price: "$121.09" },
-  { image: "/images/tesla.png", name: "TESLA", price: "$727.92" },
-  { image: "/images/google.png", name: "GOOGLE", price: "$2347.94" },
-  { image: "/images/fb.png", name: "FACEBOOK", price: "$197.32" },
+  { image: "/images/msft.png", name: "MICROSOFT", price: "$270.41" },
+  { image: "/images/amazon.png", name: "AMAZON", price: "$121.18" },
+  { image: "/images/tesla.png", name: "TESLA", price: "$725.60" },
+  { image: "/images/google.png", name: "GOOGLE", price: "$2344.76" },
+  { image: "/images/fb.png", name: "FACEBOOK", price: "$196.64" },
 ];
 
 const StocksTicks = () => {
