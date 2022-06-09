@@ -33,7 +33,7 @@ const Header = () => {
         nameRef.current.value
       );
       setSignUp(nameRef.current.value);
-      setShowDrop(false);
+      setShowDrop(!showDrop);
       setLogIn("");
       setError("");
       setLoading(true);
@@ -56,7 +56,7 @@ const Header = () => {
     try {
       console.log(emailRefLog.current.value, passwordRefLog.current.value);
       setSignUp("welcome Back");
-      setShowDrop(false);
+      setShowDrop(!showDrop);
       setLogIn("");
       setError("");
       setLoading(true);
@@ -185,9 +185,14 @@ const Header = () => {
           )}
         </div>
         <div className="dropdown">
-          <button className="dropbtn" style={{ fontWeight: "bold" }}>
-            {signUp}
-          </button>
+          {currentUser ? (
+            <div></div>
+          ) : (
+            <button className="dropbtn" style={{ fontWeight: "bold" }}>
+              {signUp}
+            </button>
+          )}
+
           {showDrop && (
             <div className="dropdown-content">
               {error && (
