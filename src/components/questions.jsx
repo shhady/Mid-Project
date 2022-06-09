@@ -14,7 +14,7 @@ import "./questions.css";
 //? PUT - Update - update some data on server
 
 export default class App1 extends React.Component {
-  state = { questions: [], newQuestion: "", isSpinning: true };
+  state = { questions: [], newQuestion: "", isSpinning: true, posterID: "" };
 
   //? GET
   async componentDidMount() {
@@ -22,19 +22,32 @@ export default class App1 extends React.Component {
       const { data } = await axios.get(
         "https://629de115c6ef9335c0a8f53f.mockapi.io/questions"
       );
-      this.setState({ questions: data, isSpinning: false }, () => {
-        console.log(this.props.currentUser);
-      });
+      this.setState(
+        {
+          questions: data,
+          isSpinning: false,
+          //   posterID: this.props.currentUser.uid,
+        },
+        () => {
+          console.log(this.state.posterID);
+
+          // console.log(this.props.currentUser.email.split("@")[0]);
+        }
+      );
     } catch (e) {
       console.log(e);
     }
   }
+
   //? POST
   handleCreate = async () => {
     this.setState({ isSpinning: true });
     const newPerson = {
       Questions: this.state.newQuestion,
+      name: this.props.currentUser.email.split("@")[0],
+      //   id: this.state.currentUser.uid,
     };
+    console.log(newPerson.id);
     try {
       const postedData = await axios.post(
         "https://629de115c6ef9335c0a8f53f.mockapi.io/questions",
@@ -81,7 +94,7 @@ export default class App1 extends React.Component {
       `https://629de115c6ef9335c0a8f53f.mockapi.io/questions/${id}`,
       updatedReply
     );
-    console.log(newAnswers);
+    // console.log(newAnswers);
     this.setState((prev) => {
       return {
         questions: prev.questions.map((person) => {
@@ -100,6 +113,7 @@ export default class App1 extends React.Component {
       return console.log(answer);
     });
   };
+
   //?UI
   paintPeople = () => {
     return this.state.questions.map(({ name, img, id, Questions, answers }) => {
@@ -179,9 +193,15 @@ export default class App1 extends React.Component {
                 </div>
               )}
             </div>
-            <div style={{ width: "80%", margin: "auto" }}>
-              {this.paintPeople()}
-            </div>
+            {this.props.currentUser ? (
+              <div style={{ width: "80%", margin: "auto" }}>
+                {this.paintPeople()}
+              </div>
+            ) : (
+              <div style={{ width: "80%", margin: "auto" }}>
+                {this.paintPeople()}
+              </div>
+            )}
           </>
         )}
       </div>
