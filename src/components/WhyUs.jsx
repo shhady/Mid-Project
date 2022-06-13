@@ -38,7 +38,7 @@ const WhyUs = () => {
           ) : (
             <div>
               <h3 style={{ textAlign: "center" }}>
-                Log in to get recommendations
+                Log in for recommendations
               </h3>
             </div>
           )}

@@ -2,7 +2,6 @@ import axios from "axios";
 import React from "react";
 import Person from "./Person";
 import "./questions.css";
-// import { useAuth } from "../context/AuthContext"
 //* CRUD
 
 //? API to work with
